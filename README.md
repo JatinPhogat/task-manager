@@ -60,10 +60,12 @@ npm install
 ```
 Start MongoDB
 Ensure MongoDB is running. Use the following command if MongoDB is installed locally:
+.env (Optional)
+- If you are using a cloud database or want to use custom environment variables, create a .env file in the backend directory and add the following:
+```bash
+MONGODB_URI=your_mongodb_connection_string
+```
 
-```
-mongod
-```
 Start the Backend Server
 Navigate to the backend directory and start the server:
 
@@ -80,3 +82,6 @@ npm start
 The frontend will run at 
 ```
 http://localhost:3000
+```
+
+Port Conflict: If ports 3000 is already in use, update the configuration: For the backend, change the PORT in the .env file. For the frontend, update the proxy setting in frontend/package.json. MongoDB Connection Issues: Ensure that MongoDB is running locally or that your connection string in .env is correct.
